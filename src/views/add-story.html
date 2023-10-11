@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+</head>
+<body>
+<header style='min-height: 56px;'>
+  <header-app></header-app>
+</header>
+<p></p>
+<main>
+  <div class='main-content container px-5'>
+    <form class='row gx-5' id='addStoryForm' novalidate>
+      <h6 class='mb-3'>Tell a story that you think is very impressive!</h6>
+      <text-area-custom
+        textAreaLabel='Type it Here'
+        textAreaID='yourStory'
+        invalidMsg='Please Type Your Story First'
+        required
+      ></text-area-custom>
+      <h6 class='mb-3 mt-5'>Then, Add picture to make your story more colorful!</h6>
+      <image-input
+        inputID='story-image'
+        invalidMsg='Please Add Your Image Story First'
+        required
+      ></image-input>
+      <button-custom
+        buttonID='addBtn'
+        buttonLabel='Submit Your Story'
+      ></button-custom>
+    </form>
+    <!-- Modal -->
+    <div class='modal fade' id='myModal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1'
+         aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+      <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+          <div class='modal-body container text-center'>
+            <button type='button' class='btn-close btn-primary position-absolute end-0 mx-3' data-bs-dismiss='modal' aria-label='Close'></button>
+            <div class='row'>
+              <div class='container-fluid w-50 h-50' id='lottieSvg'></div>
+              <h5 class='mt-3 text-white'>Your Story Successfully Added !</h5>
+            </div>
+            <div class='row justify-content-evenly mt-5'>
+              <button id='btnDashboard' type='button' class='btn btn-secondary col-4 p-2' data-bs-dismiss='modal'>Back to
+                Dashboard
+              </button>
+              <button id='btnAnother' type='button' class='btn btn-primary col-4 p-2 text-white'>Add Another Story</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<p></p>
+<footer class='text-center'>
+  <footer-app></footer-app>
+</footer>
+</body>
+</html>

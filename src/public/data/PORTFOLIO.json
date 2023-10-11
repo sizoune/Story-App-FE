@@ -1,0 +1,36 @@
+{
+  "error": false,
+  "message": "Portfolios fetched successfully",
+  "listPortfolio": [
+    {
+      "appName": "TabalongPedia",
+      "photoUrl": "https://play-lh.googleusercontent.com/NyxgChX7QNXfg6a6XpYvn1g6JaVHX1OTFwh22_SHuC0W3Jw-K8fK3TSLF8yr7c077ZQ=w240-h480-rw",
+      "detailUrl": "https://play.google.com/store/apps/details?id=com.kominfotabalong.smarttabalong"
+    },
+    {
+      "appName": "Tv Tabalong",
+      "photoUrl": "https://play-lh.googleusercontent.com/_Z7py7IKtX1uoNxGY58rwfukkZBChuNmTT_zKkoOpLvQOqSY9i7OyhaMRwe2HGTKc74A=w240-h480-rw",
+      "detailUrl": "https://play.google.com/store/apps/details?id=com.diskominfotik.tvtabalongapps"
+    },
+    {
+      "appName": "Langsat Manis",
+      "photoUrl": "https://play-lh.googleusercontent.com/9iajARgT9eTJ_eVNrsMTjYBskUkQBO00l7C3yAk5ZmeS9xGu50xKuaQDB1HAC97Hrg=w240-h480-rw",
+      "detailUrl": "https://play.google.com/store/apps/details?id=com.tabalongtech.langsatmanis"
+    },
+    {
+      "appName": "Si Uji Tepat",
+      "photoUrl": "https://play-lh.googleusercontent.com/Wh8yFKvTkjVVwjIw0oxjkGqGjC2O_PA2hlTDL9RCVBQ1qb3yK7qcwvl65Ayet9JEsMI=w240-h480-rw",
+      "detailUrl": "https://play.google.com/store/apps/details?id=com.mwitech.siujitepat"
+    },
+    {
+      "appName": "My Dinkes Tabalong",
+      "photoUrl": "https://play-lh.googleusercontent.com/R9p_rUP7ahaTEEozXpsJ5ufra_K_513nL0OmoBkxYK0Uy0kFNAcEGmBZByJ-vhzkbQ=w240-h480-rw",
+      "detailUrl": "https://play.google.com/store/apps/details?id=com.tabalong.mydinkes"
+    },
+    {
+      "appName": "SI MAS GANTENG TABALONG",
+      "photoUrl": "https://play-lh.googleusercontent.com/Le-2xm_4ZRZbRx6CVAv3VHBi-znLAtB3O3UQq3myCHPMWmC2d-ckA4OM8viNqcWFIHc=w240-h480-rw",
+      "detailUrl": "https://play.google.com/store/apps/details?id=com.kominfotabalong.simasganteng"
+    }
+  ]
+}

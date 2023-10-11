@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+  </head>
+  <body>
+    <header style="min-height: 56px;">
+      <header-app></header-app>
+    </header>
+    <p></p>
+    <main class="container mt-7">
+      <div id="app-stories" class="row row-card gy-3"></div>
+      <fab-button
+        url="/add-story.html"
+      ></fab-button>
+    </main>
+    <p></p>
+    <footer class="text-center">
+      <footer-app></footer-app>
+    </footer>
+  </body>
+</html>

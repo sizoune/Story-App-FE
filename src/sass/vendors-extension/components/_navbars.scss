@@ -1,0 +1,14 @@
+@use "../abstracts" as abstract;
+
+.navbar.fixed-top {
+  position: fixed !important;
+}
+
+.navbar.scrolled {
+  background-color: abstract.$dark-green;
+  @include abstract.add-shadow-below;
+}
+
+.navbar.unscroll {
+  @include abstract.add-shadow-below;
+}

@@ -1,0 +1,38 @@
+@use '../abstracts' as abstract;
+
+$card-padding-x: 1.25rem;
+$card-padding-y: 0.25rem;
+
+$border-style: none;
+$border-width: 1px 1px 2px 1px;
+$border-color: abstract.$dark-green;
+
+.card.bordered {
+  @include abstract.create-border($border-style, $border-width, $border-color);
+}
+
+.card.bottom-shadow {
+  @include abstract.add-shadow-below;
+}
+
+.card-text {
+  min-height: 75px;
+  max-height: 80px;
+  @include abstract.media-mobile{
+    min-height: 0;
+    max-height: 20px;
+    overflow: hidden;
+    //overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.card-author {
+  @include abstract.media-mobile{
+    max-width: 100ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

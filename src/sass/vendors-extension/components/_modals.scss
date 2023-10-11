@@ -1,0 +1,11 @@
+@use '../abstracts' as abstract;
+
+$font-family: 'Montserrat', 'Poppins', sans-serif;
+$background-color: abstract.$dark-green;
+$font-weight: 500;
+
+.modal-content {
+  font-family: $font-family;
+  background-color: $background-color;
+  font-weight: $font-weight;
+}

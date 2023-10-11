@@ -1,0 +1,20 @@
+@mixin create-border($style, $width, $color) {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-style: $style;
+    border-width: $width;
+    border-color: $color;
+  }
+}
+
+@mixin add-shadow-below{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@mixin media-mobile {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
