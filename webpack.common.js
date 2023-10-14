@@ -27,6 +27,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/i,
+        exclude: /styles/,
+        use: ['to-string-loader', 'css-loader'],
+      },
+      {
         test: /\.(s[ac]ss)$/i,
         use: [
           {
@@ -34,6 +39,9 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            }
           },
           {
             loader: 'postcss-loader',
@@ -73,6 +81,20 @@ module.exports = {
       title: 'About Us',
       filename: 'about-us.html',
       template: path.resolve(__dirname, 'src/views/about-us.html'),
+      ...htmlWebpackPluginConfig,
+    }),
+
+    new HtmlWebpackPlugin({
+      title: 'Login',
+      filename: 'auth/login.html',
+      template: path.resolve(__dirname, 'src/views/auth/login.html'),
+      ...htmlWebpackPluginConfig,
+    }),
+
+    new HtmlWebpackPlugin({
+      title: 'Register',
+      filename: 'auth/register.html',
+      template: path.resolve(__dirname, 'src/views/auth/register.html'),
       ...htmlWebpackPluginConfig,
     }),
 

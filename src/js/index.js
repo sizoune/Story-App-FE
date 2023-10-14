@@ -8,11 +8,15 @@ import './components/index';
 import Dashboard from './pages/dashboard';
 import AddStory from './pages/add-story';
 import AboutUs from './pages/about-us';
+import Login from './pages/auth/login';
+import Register from './pages/auth/register';
 
 const routes = {
   '/': Dashboard,
   '/add-story.html': AddStory,
   '/about-us.html': AboutUs,
+  '/auth/login.html': Login,
+  '/auth/register.html': Register,
 };
 
 const detectRoute = () => routes[window.location.pathname];
@@ -56,9 +60,8 @@ const initNavbarListener = () => {
 
 window.addEventListener('DOMContentLoaded', async () => {
   initPages();
-  initNavbarListener();
+ initNavbarListener();
 
   const route = detectRoute();
-  console.log(route);
   route.init();
 });

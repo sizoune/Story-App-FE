@@ -1,5 +1,6 @@
-import { html } from 'lit';
+import { html, css } from 'lit';
 import LitWithoutShadowDom from './base/LitWithoutShadowDom';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 class CardStory extends LitWithoutShadowDom {
   static properties = {
@@ -8,6 +9,7 @@ class CardStory extends LitWithoutShadowDom {
     description: { type: String, reflect: true },
     photoUrl: { type: String, reflect: true },
     createdAt: { type: String, reflect: true },
+    isLoading: { type: String, reflect: true },
   };
 
   constructor() {
@@ -23,7 +25,7 @@ class CardStory extends LitWithoutShadowDom {
           <p class="card-text">${this.description}</p>
           <p><small class="text-body-secondary"> ${this.createdAt}</small></p>
         </div>
-        <img src="${this.photoUrl}" class="card-img-bottom mx-auto d-block" alt="story-picture">
+        <img src="${this.photoUrl}" class="card-img-bottom"  alt="story-picture">
       </div>
     `;
   }

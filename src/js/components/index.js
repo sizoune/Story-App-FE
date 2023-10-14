@@ -7,3 +7,7 @@ import './FabButton';
 import './CustomTextArea';
 import './ImageInput';
 import './CustomButton';
+import './CustomInput';
+import './CustomDialog';
+import './NavLinkAuth';
+import './CardPlaceholder';

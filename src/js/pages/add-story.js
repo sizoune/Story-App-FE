@@ -1,19 +1,19 @@
-import lottie from 'lottie-web';
-import { Modal } from 'bootstrap';
+import CheckUserAuth from './auth/check-user-auth';
+import Story from '../network/story';
+import Show from '../utlis/ShowCustomDialog';
+import ErrorHandler from '../utlis/ErrorHandler';
 
 const AddStory = {
 
-  _defAnimation() {
-    return lottie.loadAnimation({
-      container: document.getElementById('lottieSvg'),
-      renderer: 'svg',
-      loop: false,
-      autoplay: true,
-      path: '/asset/success.json',
-    });
-  },
-
   async init() {
+    CheckUserAuth.checkLoginState();
+
+    const submitBtn = document.querySelector('#addBtn');
+    if (!CheckUserAuth.getUserSignedIn()){
+      submitBtn.innerText='Submit Story As A Guest';
+    } else {
+      submitBtn.innerText='Submit Your Story';
+    }
     await this._initialListener();
   },
 
@@ -37,34 +37,51 @@ const AddStory = {
     );
   },
 
-  _addStory() {
+  async _addStory() {
     const formData = this._getFormData();
 
     if (this._validateFormData({ ...formData })) {
       console.log('formData');
       console.log(formData);
-      this._showSuccessDialog();
-      // this._goToDashboardPage();
+      this._showLoading(true);
+      try {
+        let successMsg = '';
+        if (CheckUserAuth.getUserSignedIn()){
+          successMsg = 'Your Story has been Added Successfully!';
+          await Story.addStory({
+            description: formData.description,
+            photo: formData.storyImage,
+          });
+        } else {
+          successMsg = 'Your Story has been Added As A Guest Successfully! Please Login to see All Stories';
+          await Story.addStoryAsGuest({
+            description: formData.description,
+            photo: formData.storyImage,
+          });
+        }
+        this._showLoading(false);
+
+        Show.successDialog(successMsg, () => {
+          this._goToDashboardPage();
+        });
+      } catch (error) {
+        this._showLoading(false);
+        Show.errorDialog(ErrorHandler(error));
+        console.log(error);
+      }
     }
   },
 
-  _showSuccessDialog() {
-    const myModal = new Modal(document.getElementById('myModal'));
-    const btnDashboard = document.getElementById('btnDashboard');
-    const btnAnother = document.getElementById('btnAnother');
-
-    this._defAnimation();
-
-    btnDashboard.onclick = () => {
-      this._goToDashboardPage();
-    };
-
-    btnAnother.onclick = () => {
-      myModal.hide();
-      document.querySelector('svg').remove();
-      this._clearInput();
-    };
-    myModal.show();
+  _showLoading(isLoading) {
+    const loadingPlayer = document.querySelector('#loading-player');
+    const submitBtn = document.querySelector('#addBtn');
+    if (isLoading) {
+      loadingPlayer.classList.remove('d-none');
+      submitBtn.classList.add('d-none');
+    } else {
+      loadingPlayer.classList.add('d-none');
+      submitBtn.classList.remove('d-none');
+    }
   },
 
   _updateImagePreview() {

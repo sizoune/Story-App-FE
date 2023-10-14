@@ -26,6 +26,16 @@
         invalidMsg='Please Add Your Image Story First'
         required
       ></image-input>
+      <dotlottie-player
+        id='loading-player'
+        class='mx-auto d-none'
+        autoplay
+        loop
+        mode="normal"
+        src="/asset/loading.json"
+        style="width: 240px"
+      >
+      </dotlottie-player>
       <button-custom
         buttonID='addBtn'
         buttonLabel='Submit Your Story'
@@ -34,20 +44,12 @@
     <!-- Modal -->
     <div class='modal fade' id='myModal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1'
          aria-labelledby='staticBackdropLabel' aria-hidden='true'>
-      <div class='modal-dialog modal-dialog-centered'>
-        <div class='modal-content'>
-          <div class='modal-body container text-center'>
-            <button type='button' class='btn-close btn-primary position-absolute end-0 mx-3' data-bs-dismiss='modal' aria-label='Close'></button>
-            <div class='row'>
-              <div class='container-fluid w-50 h-50' id='lottieSvg'></div>
-              <h5 class='mt-3 text-white'>Your Story Successfully Added !</h5>
-            </div>
-            <div class='row justify-content-evenly mt-5'>
-              <button id='btnDashboard' type='button' class='btn btn-secondary col-4 p-2' data-bs-dismiss='modal'>Back to
-                Dashboard
-              </button>
-              <button id='btnAnother' type='button' class='btn btn-primary col-4 p-2 text-white'>Add Another Story</button>
-            </div>
+      <div class='modal-dialog modal-dialog-centered modal-sm'>
+        <div class='modal-content text-center'>
+          <div class='modal-header'>
+            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+          </div>
+          <div class='modal-body row row-cols-1 justify-content-center' id='dialog-body'>
           </div>
         </div>
       </div>
